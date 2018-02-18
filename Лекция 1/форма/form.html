@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <hr>
+            <label for="firstName">Имя</label>
+            <br>
+            <input type="text" name="firstName" required pattern="^[a-zA-Zа-яА-я]{3,}">
+            <br>
+            <br>
+
+
+            <label for="sex">Пол</label>
+            <p>
+                <input type="radio" name="sex" value="Male">Мужской
+                <input type="radio" name="sex" value="Female">Женский
+            </p>
+
+
+            <label for="markBook">Номер зачетной книжки (12 цифр)</label>
+            <br>
+            <input type="number" required name="markBook" required pattern="{12,}">
+            <br>
+
+            <label for="birthday">Дата рождения</label>
+            <br>
+            <input type="date" required name="birthday">
+            <br>
+
+            <label for="pass">Пароль (8 символов)</label>
+            <br>
+            <input type="password" name="pass" required pattern="^[0-9a-zA-Zа-яА-я]{8,}">
+            <br>
+            <label for="uploadedPhoto">Фотография</label>
+            <br>
+            <input type="file" name="uploadedPhoto" id="Photo" accept=".jpg">
+            <br>
+            <div id="fileinfo"></div>
+            <br>
+
+            <input type="reset" name="clear" value="Очистить">
+            <input type="submit" name="send" value="Отправить">
+        </form>
+    </div>
+    <script type="text/javascript">
+        var photo = document.getElementById('Photo').addEventListener('change', updateSize);
+    </script>
+</body>
+
+</html>
+<!-- 
+Создать форму ввода:
+
+Имя (только буквы, не менее 3)
+Пол (м/ж) (изначально не указан)
+Номер (зач.кн.) (только цифры, =12)
+Дата рождения
+Фото (только .jpg, размером < 1Мб)
+Пароль (не менее 8 символов)
+Кнопка Очистить
+Кнопка Отправить -->
