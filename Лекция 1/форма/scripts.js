@@ -19,3 +19,16 @@ function updateSize() {
     ].join("<br>");
   }
 }
+
+function sendForm() {
+  var myForm = new FormData(document.forms.myform);
+  var xmlHttp = new XMLHttpRequest();
+  $.blockUI();
+  xmlHttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      xmlHttp.open("POST", "/192.168.56.102");
+      xmlHttp.send(myForm);
+      $.unblockUI
+    }
+  }
+}
